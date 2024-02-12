@@ -43,14 +43,20 @@
 ## Необязательная часть
 
 1. При помощи `ansible-vault` расшифруйте все зашифрованные файлы с переменными.  
-9
+![Скриншот-9](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-01-base/image/9.png)  
+
 2. Зашифруйте отдельное значение `PaSSw0rd` для переменной `some_fact` паролем `netology`. Добавьте полученное значение в `group_vars/all/exmp.yml`.
 3. Запустите `playbook`, убедитесь, что для нужных хостов применился новый `fact`.  
-10  
-11  
+![Скриншот-10](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-01-base/image/10.png)  
+![Скриншот-11](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-01-base/image/11.png)  
 
-4. Добавьте новую группу хостов `fedora`, самостоятельно придумайте для неё переменную. В качестве образа можно использовать [этот вариант](https://hub.docker.com/r/pycontribs/fedora).
-5. Напишите скрипт на bash: автоматизируйте поднятие необходимых контейнеров, запуск ansible-playbook и остановку контейнеров.
+
+4. Добавьте новую группу хостов `fedora`, самостоятельно придумайте для неё переменную. В качестве образа можно использовать [этот вариант](https://hub.docker.com/r/pycontribs/fedora).  
+![Скриншот12](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-01-base/image/12.png)  
+
+5. Напишите скрипт на bash: автоматизируйте поднятие необходимых контейнеров, запуск ansible-playbook и остановку контейнеров.  
+![Скриншот13](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-01-base/image/13.png)  
+
 6. Все изменения должны быть зафиксированы и отправлены в ваш личный репозиторий.
 
 ---
