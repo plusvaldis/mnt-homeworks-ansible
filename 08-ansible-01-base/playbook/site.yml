@@ -1,4 +1,10 @@
 ---
+  - name: Run bush script run container docker
+    hosts: local
+    become: yes
+    tasks:
+      - name: Run bush run container
+        ansible.builtin.command: "/home/user/docker_run_container.sh"
   - name: Print os facts
     hosts: all
     tasks:
@@ -8,3 +14,9 @@
       - name: Print fact
         debug:
           msg: "{{ some_fact }}"
+  - name: Run bush script down container docker
+    hosts: local
+    become: yes
+    tasks:
+      - name: Run bush down container
+        ansible.builtin.command: "/home/user/docker_down_container.sh"
