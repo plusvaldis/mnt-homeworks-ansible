@@ -57,7 +57,20 @@
 5. Напишите скрипт на bash: автоматизируйте поднятие необходимых контейнеров, запуск ansible-playbook и остановку контейнеров.  
 ![Скриншот13](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-01-base/image/13.png)  
 
-6. Все изменения должны быть зафиксированы и отправлены в ваш личный репозиторий.
+6. Все изменения должны быть зафиксированы и отправлены в ваш личный репозиторий.  
+
+docker_run_container.sh
+```bash
+#!/bin/bash
+docker run -it -d --name fedora pycontribs/fedora /bin/bash
+docker run -it -d --name centos7 centos /bin/bash
+docker run -it -d --name ubuntu pycontribs/fedora /bin/bash
+```  
+docker_down_container.sh
+```bash
+#!/bin/bash
+docker rm -f fedora centos7 ubuntu
+``` 
 
 ---
 
