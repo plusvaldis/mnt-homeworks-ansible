@@ -2,10 +2,8 @@
 clickhouse:
   hosts:
     clickhouse-01:
-      vars:
         ansible_connection: local
 vector:
   hosts: 
     localhost:
-      vars:
         ansible_connection: local
