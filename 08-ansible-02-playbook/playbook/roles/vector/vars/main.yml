@@ -1,5 +1,0 @@
-dummy_logs_type: demo_logs
-dummy_logs_format: syslog
-parse_logs_type: remap
-print_type: console
-message: it's new file
