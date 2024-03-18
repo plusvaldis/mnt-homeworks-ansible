@@ -1,0 +1,29 @@
+---
+- name: Install vector
+  hosts: vector
+  handlers:
+    - name: Start vector service
+      become: true
+      ansible.builtin.service:
+        name: vector
+        state: restarted
+  tasks:
+    - block:
+        - name: Get vector distrib
+          ansible.builtin.get_url:
+            url: "https://packages.timber.io/vector/{{ vector_version }}/{{ item }}-{{ vector_version }}.noarch.rpm"
+            dest: "./{{ item }}-{{ vector_version }}.rpm"
+          with_items: "{{ vector_packages }}"
+      rescue:
+        - name: Get vector distrib
+          ansible.builtin.get_url:
+            url: "https://packages.timber.io/vector/{{ vector_version }}/{{ vector_version }}.x86_64.rpm"
+            dest: "./vector-{{ vector_version }}.rpm"
+    - name: Install vector packages
+      become: true
+      ansible.builtin.yum:
+        name:
+          - vector-{{ vector_version }}.rpm
+      notify: Start vector service
+    - name: Flush handlers
+      meta: flush_handlers
