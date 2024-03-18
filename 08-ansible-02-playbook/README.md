@@ -13,17 +13,17 @@
 2. Допишите playbook: нужно сделать ещё один play, который устанавливает и настраивает [vector](https://vector.dev). Конфигурация vector должна деплоиться через template файл jinja2. От вас не требуется использовать все возможности шаблонизатора, просто вставьте стандартный конфиг в template файл. Информация по шаблонам по [ссылке](https://www.dmosk.ru/instruktions.php?object=ansible-nginx-install). не забудьте сделать handler на перезапуск vector в случае изменения конфигурации!  
 Описал новый play, который выполняет загрузку пакета, устанавливает его, и подкладывает файл из шаблона  
 
-[File] - https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-02-playbook/playbook/templates/vector.yaml  
+[File template vector.yaml] - (https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-02-playbook/playbook/templates/vector.yaml)  
 
 3. При создании tasks рекомендую использовать модули: `get_url`, `template`, `unarchive`, `file`.
 4. Tasks должны: скачать дистрибутив нужной версии, выполнить распаковку в выбранную директорию, установить vector.  
-[File] - https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-02-playbook/playbook/prod.yml 
+[File prod.yml] - (https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-02-playbook/playbook/prod.yml) 
 
 5. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.  
 Ошибки присутствовали, при скачивании дистрибутива, т.к. не было указанной версии *.noarch у clinet-common-static. убрал из переменных clickhouse, clickhouse_packages=clickhouse-common-static, а в таксках, block изменил на always. что позволяет всегда выполнять block не зависимо были ошибки или нет.  
 
 6. Попробуйте запустить playbook на этом окружении с флагом `--check`.  
-![Скриншот-1](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/MNT-video/08-ansible-02-playbook/img/1.png) 
+![Скриншот-1](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/MNT-video/08-ansible-02-playbook/img/img1.png) 
 7. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.  
 ![Скриншот-3](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/MNT-video/08-ansible-02-playbook/img/img3.png)
 8. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.  
