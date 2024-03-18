@@ -23,7 +23,7 @@
 Ошибки присутствовали, при скачивании дистрибутива, т.к. не было указанной версии *.noarch у clinet-common-static. убрал из переменных clickhouse, clickhouse_packages=clickhouse-common-static, а в таксках, block изменил на always. что позволяет всегда выполнять block не зависимо были ошибки или нет.  
 
 6. Попробуйте запустить playbook на этом окружении с флагом `--check`.  
-![Скриншот-1](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/MNT-video/08-ansible-02-playbook/img/1.png)  
+![Скриншот-1](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-02-playbook/img/1.png)  
 
 7. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.  
 ![Скриншот-3](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/MNT-video/08-ansible-02-playbook/img/3.png)  
