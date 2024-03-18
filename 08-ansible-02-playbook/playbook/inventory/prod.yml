@@ -3,3 +3,7 @@ clickhouse:
   hosts:
     clickhouse-01:
       ansible_host: localhost
+vector:
+  hosts: 
+    centos:
+      ansible_host: localhost
