@@ -25,7 +25,7 @@
       notify: Start vector service
     - name: Replace vector.yaml
       template:
-        src=roles/vector/templates/vector.yaml
+        src=templates/vector.yaml
         dest=/etc/vector/vector.yaml
       notify: Restart vector service
     - name: Flush handlers
