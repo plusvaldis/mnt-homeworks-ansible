@@ -6,6 +6,11 @@
       become: true
       ansible.builtin.service:
         name: vector
+        state: strated
+    - name: Restart vector service
+      become: true
+      ansible.builtin.service:
+        name: vector
         state: restarted
   tasks:
     - name: Get vector distrib
@@ -18,5 +23,10 @@
         name:
           - vector-{{ vector_version }}.rpm
       notify: Start vector service
+    - name: Replace vector.yaml
+      template:
+        src=roles/vector/templates/vector.yaml
+        dest=/etc/vector/vector.yaml
+      notify: Restart vector service
     - name: Flush handlers
       meta: flush_handlers
