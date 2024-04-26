@@ -81,9 +81,9 @@
         state: directory
         recurse: yes
         mode: '0755'
-        owner: nginx
-        group: nginx
-        
+        owner: ubuntu
+        group: ubuntu
+
     - name: LightHouse | Copy from git
       git:
         repo: "{{ lighthouse_vcs }}"
