@@ -5,19 +5,19 @@ clickhouse:
         ansible_connection: ssh
         ansible_user: ubuntu
         ansible_ssh_private_key_file: ~/.ssh/id_rsa
-        ansible_host: 84.252.130.238
+        ansible_host: 84.201.129.19
 vector:
   hosts: 
     vector-01:
         ansible_connection: ssh
         ansible_user: ubuntu
         ansible_ssh_private_key_file: ~/.ssh/id_rsa
-        ansible_host: 84.252.130.167
+        ansible_host: 51.250.64.223
 lighthouse:
   hosts: 
     lighthouse:
         ansible_connection: ssh
         ansible_user: ubuntu
         ansible_ssh_private_key_file: ~/.ssh/id_rsa
-        ansible_host: 51.250.67.58
+        ansible_host: 62.84.112.72
 
