@@ -85,18 +85,11 @@
         group: ubuntu
 
     - name: LightHouse | Copy from git
+      become: true
       git:
         repo: "{{ lighthouse_vcs }}"
         version: master
         dest: "{{ lighthouse_location_dir }}"
-    - name: Flush handllush_handleers
-      meta: flush_handlers
-    - name: FIREWALL | Add Rules
-      changed_when: false
-      become: true
-      shell: |
-        firewall-cmd --permanent --add-service=http
-        firewall-cmd --reload
 
 - name: Install Clickhouse
   hosts: clickhouse
