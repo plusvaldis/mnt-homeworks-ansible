@@ -1,0 +1,32 @@
+---
+- name: Install lighthouse
+  hosts: lighthouse
+  handlers:
+    - name: Start lighthouse service
+      become: true
+      ansible.builtin.service:
+        name: lighthouse
+        state: strated
+    - name: Restart lighthouse service
+      become: true
+      ansible.builtin.service:
+        name: lighthouse
+        state: restarted
+  tasks:
+    - name: Get lighthouse distrib
+      ansible.builtin.get_url:
+        url: "https://packages.timber.io/vector/{{ vector_version }}/vector-{{ vector_version }}-1.x86_64.rpm"
+        dest: "./vector-{{ vector_version }}.rpm"
+    - name: Install vector packages
+      become: true
+      ansible.builtin.yum:
+        name:
+          - vector-{{ vector_version }}.rpm
+      notify: Start vector service
+    - name: Replace vector.yaml
+      template:
+        src=templates/vector.yaml
+        dest=/etc/vector/vector.yaml
+      notify: Restart vector service
+    - name: Flush handlers
+      meta: flush_handlers
