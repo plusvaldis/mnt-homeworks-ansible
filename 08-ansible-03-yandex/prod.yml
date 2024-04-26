@@ -31,6 +31,3 @@
       notify: Restart vector service
     - name: Flush handlers
       meta: flush_handlers
-
-
-- name: Install lighthouse

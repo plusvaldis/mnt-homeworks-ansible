@@ -1,32 +1,55 @@
 ---
+- name: Install nginx
+  hosts: lighthouse
+  handlers:
+    - name: start-nginx
+      become: true
+      command: nginx
+    - name: reload-nginx
+      become: true
+      command: nginx -s reload
+  tasks:
+    - name: NGINX | Install epel-release
+      become: true
+      ansible.builtin.yum: 
+        name: epel-release
+        state: present
+    - name: NGINX | Install NGINX
+      become: true
+      ansible.builtin.yum:
+        name: nginx
+        state: present
+      notify: start-nginx
+    - name: NGINX | Create general config
+      become: true
+      template:
+        src: templates/nginx.conf.j2
+        dest: /etc/nginx/nginx.conf
+        mode: 0644
+      notify: reload-nginx
+      
 - name: Install lighthouse
   hosts: lighthouse
   handlers:
-    - name: Start lighthouse service
+    - name: reload-nginx
       become: true
-      ansible.builtin.service:
-        name: lighthouse
-        state: strated
-    - name: Restart lighthouse service
-      become: true
-      ansible.builtin.service:
-        name: lighthouse
-        state: restarted
-  tasks:
-    - name: Get lighthouse distrib
-      ansible.builtin.get_url:
-        url: "https://packages.timber.io/vector/{{ vector_version }}/vector-{{ vector_version }}-1.x86_64.rpm"
-        dest: "./vector-{{ vector_version }}.rpm"
-    - name: Install vector packages
+      command: nginx -s reload
+  pre_tasks:
+    - name: LightHouse | Install dependencies
       become: true
       ansible.builtin.yum:
-        name:
-          - vector-{{ vector_version }}.rpm
-      notify: Start vector service
-    - name: Replace vector.yaml
+        name: git
+        state: present
+  tasks:
+    - name: LightHouse | Copy from git
+      git:
+        repo: "{{ lighthouse_vcs }}"
+        version: master
+        dest: "{{ lighthouse_location_dir }}"
+    - name: Lighthouse | Create lighthouse config
+      become: true
       template:
-        src=templates/vector.yaml
-        dest=/etc/vector/vector.yaml
-      notify: Restart vector service
-    - name: Flush handlers
-      meta: flush_handlers
+        src: lighthouse.conf.j2
+        dest: /etc/nginx/conf.d/default.conf
+        mode: 0644
+      notify: reload-nginx
