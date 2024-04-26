@@ -8,6 +8,7 @@
 ## Основная часть
 
 1. Допишите playbook: нужно сделать ещё один play, который устанавливает и настраивает LightHouse.
+* [playbook](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-03-yandex/prod.yml)
 2. При создании tasks рекомендую использовать модули: `get_url`, `template`, `yum`, `apt`.
 3. Tasks должны: скачать статику LightHouse, установить Nginx или любой другой веб-сервер, настроить его конфиг для открытия LightHouse, запустить веб-сервер.
 4. Подготовьте свой inventory-файл `prod.yml`.
