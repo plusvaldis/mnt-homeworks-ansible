@@ -25,6 +25,7 @@
           - vector-{{ vector_version }}.rpm
       notify: Start vector service
     - name: Replace vector.yaml
+      become: true
       template:
         src=templates/vector.yaml
         dest=/etc/vector/vector.yaml
