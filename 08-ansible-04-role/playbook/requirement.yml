@@ -3,3 +3,11 @@
   src: git@github.com:plusvaldis/mnt-homeworks-ansible.git
   scm: git
   version: master
+- name: vector
+  src: git@github.com:plusvaldis/mnt-homeworks-ansible.git
+  scm: git
+  version: vector
+- name: Lighthouse
+  src: git@github.com:plusvaldis/mnt-homeworks-ansible.git
+  scm: git
+  version: lighthouse
