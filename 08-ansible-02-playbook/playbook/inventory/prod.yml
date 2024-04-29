@@ -1,9 +1,0 @@
----
-clickhouse:
-  hosts:
-    clickhouse-01:
-        ansible_connection: local
-vector:
-  hosts: 
-    localhost:
-        ansible_connection: local

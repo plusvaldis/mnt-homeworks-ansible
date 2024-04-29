@@ -1,5 +1,0 @@
----
-- name: clickhouse
-  src: git@github.com:plusvaldis/mnt-homeworks-ansible.git
-  scm: git
-  version: master
