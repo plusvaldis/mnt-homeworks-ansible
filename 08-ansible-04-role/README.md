@@ -53,6 +53,7 @@
 10. Выложите playbook в репозиторий.
 11. В ответе дайте ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.
 ![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-04-role/img/roles.png)
+![install](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-04-role/img/install.png)
 
 ---  
 
