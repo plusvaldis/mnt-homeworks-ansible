@@ -2,7 +2,8 @@ galaxy_info:
   author: Vladislav Cherepanov
   description: install vector
   company: none
-
+  role-name: vector
+  namespace: test
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
   # issue_tracker_url: http://example.com/issue/tracker
@@ -28,14 +29,14 @@ galaxy_info:
   # https://galaxy.ansible.com/api/v1/platforms/
   #
   platforms:
-  - name: Centos
+  - name: OracleLinux
     versions:
-    - 7
     - 8
-  - name: RHEL
+  - name: Ubuntu
     versions:
-    - 7
-    - 8
+    - 22.04
+    - 22.10
+    - 24.04
   # - name: SomePlatform
   #   versions:
   #   - all
