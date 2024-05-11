@@ -23,7 +23,7 @@
 ![1](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-05-testing/img/molec.png)
 ![1](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-05-testing/img/valid.png)
 5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.  
-#### [Vector-role tag.v1.0.1](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/v1.0.2)
+#### [Vector-role tag.v1.0.2](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/v1.0.2)
 ### Tox
 
 1. Добавьте в директорию с vector-role файлы из [директории](./example).
