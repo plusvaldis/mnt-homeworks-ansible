@@ -17,7 +17,10 @@
 4. On fix -> On reproduce, Done fix.
 5. Done fix -> On test.
 6. On test -> On fix, Done.
-7. Done -> Closed, Open.
+7. Done -> Closed, Open.  
+
+Создан workflow для bug типа задачи.  
+![bug](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/09-ci-01-intro/img/bug.png)  
 
 Остальные задачи должны проходить по упрощённому workflow:
 
@@ -25,17 +28,24 @@
 2. On develop -> Open, Done develop.
 3. Done develop -> On test.
 4. On test -> On develop, Done.
-5. Done -> Closed, Open.
+5. Done -> Closed, Open.  
+
+Для отсальных типов, упрощенный forkflow  
+![all_f](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/09-ci-01-intro/img/all_f.png)  
 
 **Что нужно сделать**
 
-1. Создайте задачу с типом bug, попытайтесь провести его по всему workflow до Done. 
-1. Создайте задачу с типом epic, к ней привяжите несколько задач с типом task, проведите их по всему workflow до Done. 
+1. Создайте задачу с типом bug, попытайтесь провести его по всему workflow до Done.  
+![bug_done](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/09-ci-01-intro/img/bug_done.png)  
+1. Создайте задачу с типом epic, к ней привяжите несколько задач с типом task, проведите их по всему workflow до Done.  
+![epik_done](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/09-ci-01-intro/img/epik_done.png)
 1. При проведении обеих задач по статусам используйте kanban. 
 1. Верните задачи в статус Open.
 1. Перейдите в Scrum, запланируйте новый спринт, состоящий из задач эпика и одного бага, стартуйте спринт, проведите задачи до состояния Closed. Закройте спринт.
-2. Если всё отработалось в рамках ожидания — выгрузите схемы workflow для импорта в XML. Файлы с workflow и скриншоты workflow приложите к решению задания.
+2. Если всё отработалось в рамках ожидания — выгрузите схемы workflow для импорта в XML. Файлы с workflow и скриншоты workflow приложите к решению задания.  
 
+[bug](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/09-ci-01-intro/xml/bug.xml)
+[all_not_bug](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/09-ci-01-intro/xml/all_not_bug.xml)
 ---
 
 ### Как оформить решение задания
