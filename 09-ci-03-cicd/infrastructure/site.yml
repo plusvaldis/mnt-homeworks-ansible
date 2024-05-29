@@ -61,7 +61,7 @@
 
     - name: Install PostgreSQL
       yum:
-        name: "postgresql{{ postgresql_version }}-server"
+        name: "postgresql{{ postgresql_version }}-server.x86_64"
         state: present
 
     - name: Init template1 DB
@@ -94,7 +94,7 @@
     - name: Copy pg_hba.conf
       copy:
         src: pg_hba.conf
-        dest: /var/lib/pgsql/11/data/pg_hba.conf
+        dest: /var/lib/pgsql/15/data/pg_hba.conf
         mode: 0600
         owner: postgres
         group: postgres
