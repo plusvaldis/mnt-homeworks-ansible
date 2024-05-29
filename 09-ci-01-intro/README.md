@@ -44,8 +44,8 @@
 1. Перейдите в Scrum, запланируйте новый спринт, состоящий из задач эпика и одного бага, стартуйте спринт, проведите задачи до состояния Closed. Закройте спринт.
 2. Если всё отработалось в рамках ожидания — выгрузите схемы workflow для импорта в XML. Файлы с workflow и скриншоты workflow приложите к решению задания.  
 
-[bug](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/09-ci-01-intro/xml/bug.xml)
-[all_not_bug](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/09-ci-01-intro/xml/all_not_bug.xml)
+[bug.xml](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/09-ci-01-intro/xml/bug.xml)  
+[all_not_bug.xml](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/09-ci-01-intro/xml/all_not_bug.xml)
 ---
 
 ### Как оформить решение задания
