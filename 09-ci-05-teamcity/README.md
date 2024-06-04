@@ -14,7 +14,7 @@
 1. Создайте новый проект в teamcity на основе fork.
 ![1](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/09-ci-05-teamcity/img/fork_repo.png)  
 2. Сделайте autodetect конфигурации.
-![2](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/09-ci-05-teamcity/img/autodetect.png) 
+![2](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/09-ci-05-teamcity/img/1autodetect.png) 
 3. Сохраните необходимые шаги, запустите первую сборку master.
 4. Поменяйте условия сборки: если сборка по ветке `master`, то должен происходит `mvn clean deploy`, иначе `mvn clean test`.  
 ![3](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/09-ci-05-teamcity/img/origin.png) 
