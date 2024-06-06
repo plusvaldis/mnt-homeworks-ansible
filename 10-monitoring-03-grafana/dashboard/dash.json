@@ -1,0 +1,344 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 2,
+    "iteration": 1717705852941,
+    "links": [],
+    "panels": [
+      {
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 0,
+          "y": 0
+        },
+        "id": 8,
+        "options": {
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "text": {}
+        },
+        "pluginVersion": "7.4.0",
+        "targets": [
+          {
+            "expr": "100 - ((node_filesystem_avail_bytes{device=\"/dev/mapper/ubuntu--vg-ubuntu--lv\",fstype=\"ext4\"} * 100) / node_filesystem_size_bytes{device=\"/dev/mapper/ubuntu--vg-ubuntu--lv\",fstype=\"ext4\"})",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Disk usage",
+        "type": "gauge"
+      },
+      {
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "percentage",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 75.9
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 7,
+          "x": 4,
+          "y": 0
+        },
+        "id": 4,
+        "options": {
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "text": {}
+        },
+        "pluginVersion": "7.4.0",
+        "targets": [
+          {
+            "expr": "avg(node_load1) / count(count(node_cpu_seconds_total) by (cpu)) * 100",
+            "instant": false,
+            "interval": "",
+            "legendFormat": "LA/1",
+            "refId": "A"
+          },
+          {
+            "expr": "avg(node_load5) / count(count(node_cpu_seconds_total) by (cpu)) * 100",
+            "hide": false,
+            "instant": false,
+            "interval": "",
+            "legendFormat": "LA/5",
+            "refId": "B"
+          },
+          {
+            "expr": "avg(node_load15) / count(count(node_cpu_seconds_total) by (cpu)) * 100",
+            "hide": false,
+            "instant": false,
+            "interval": "",
+            "legendFormat": "LA/15",
+            "refId": "C"
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "CPULA",
+        "type": "gauge"
+      },
+      {
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 3,
+          "x": 11,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "text": {}
+        },
+        "pluginVersion": "7.4.0",
+        "targets": [
+          {
+            "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{job=\"nodeexporter\",mode=\"idle\"}[5m])) * 100)",
+            "interval": "",
+            "legendFormat": "{{mode}}",
+            "refId": "A"
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "CPU util",
+        "type": "gauge"
+      },
+      {
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "continuous-YlRd"
+            },
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "decgbytes"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 10,
+          "x": 14,
+          "y": 0
+        },
+        "id": 6,
+        "options": {
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "text": {}
+        },
+        "pluginVersion": "7.4.0",
+        "targets": [
+          {
+            "expr": "(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / 1073741824",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Usage",
+            "refId": "B"
+          },
+          {
+            "expr": "node_memory_MemTotal_bytes / 1073741824",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Total",
+            "refId": "A"
+          },
+          {
+            "expr": "node_memory_MemAvailable_bytes / 1073741824",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Free",
+            "refId": "C"
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "RAM",
+        "transformations": [
+          {
+            "id": "reduce",
+            "options": {
+              "includeTimeField": false,
+              "mode": "seriesToRows",
+              "reducers": []
+            }
+          }
+        ],
+        "type": "gauge"
+      }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 27,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "allValue": null,
+          "current": {
+            "selected": false,
+            "text": "cpu",
+            "value": "cpu"
+          },
+          "datasource": null,
+          "definition": "",
+          "description": null,
+          "error": null,
+          "hide": 0,
+          "includeAll": false,
+          "label": null,
+          "multi": false,
+          "name": "query0",
+          "options": [],
+          "query": "",
+          "refresh": 0,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "tagValuesQuery": "",
+          "tags": [],
+          "tagsQuery": "",
+          "type": "query",
+          "useTags": false
+        }
+      ]
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "New dashboard Copy",
+    "uid": "_QX4clySk",
+    "version": 1
+  }

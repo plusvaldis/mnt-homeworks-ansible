@@ -22,9 +22,12 @@
 ### Задание 1
 
 1. Используя директорию [help](./help) внутри этого домашнего задания, запустите связку prometheus-grafana.
-1. Зайдите в веб-интерфейс grafana, используя авторизационные данные, указанные в манифесте docker-compose.
-1. Подключите поднятый вами prometheus, как источник данных.
-1. Решение домашнего задания — скриншот веб-интерфейса grafana со списком подключенных Datasource.
+1. Зайдите в веб-интерфейс grafana, используя авторизационные данные, указанные в манифесте docker-compose.  
+1
+1. Подключите поднятый вами prometheus, как источник данных.  
+2
+1. Решение домашнего задания — скриншот веб-интерфейса grafana со списком подключенных Datasource.  
+3
 
 ## Задание 2
 
@@ -36,12 +39,29 @@
 
 Создайте Dashboard и в ней создайте Panels:
 
-- утилизация CPU для nodeexporter (в процентах, 100-idle);
-- CPULA 1/5/15;
-- количество свободной оперативной памяти;
-- количество места на файловой системе.
+- утилизация CPU для nodeexporter (в процентах, 100-idle);  
+```bash
+100 - (avg by (instance) (irate(node_cpu_seconds_total{job="nodeexporter",mode="idle"}[5s])) * 100)
+```
+- CPULA 1/5/15;  
+```bash
+avg(node_load1) / count(count(node_cpu_seconds_total) by (cpu)) * 100
+avg(node_load5) / count(count(node_cpu_seconds_total) by (cpu)) * 100
+avg(node_load15) / count(count(node_cpu_seconds_total) by (cpu)) * 100
+```
+- количество свободной оперативной памяти;  
+```bash
+(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / 1073741824
+node_memory_MemTotal_bytes / 1073741824
+node_memory_MemAvailable_bytes / 1073741824
+```
+- количество места на файловой системе.  
+```bash
+100 - ((node_filesystem_avail_bytes{device="/dev/mapper/ubuntu--vg-ubuntu--lv",fstype="ext4"} * 100) / node_filesystem_size_bytes{device="/dev/mapper/ubuntu--vg-ubuntu--lv",fstype="ext4"})
+```
 
-Для решения этого задания приведите promql-запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.
+Для решения этого задания приведите promql-запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.  
+4
 
 ## Задание 3
 
