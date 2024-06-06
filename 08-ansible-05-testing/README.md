@@ -16,21 +16,31 @@
 ### Molecule
 
 1. Запустите  `molecule test -s ubuntu_xenial` (или с любым другим сценарием, не имеет значения) внутри корневой директории clickhouse-role, посмотрите на вывод команды. Данная команда может отработать с ошибками или не отработать вовсе, это нормально. Наша цель - посмотреть как другие в реальном мире используют молекулу И из чего может состоять сценарий тестирования.
-2. Перейдите в каталог с ролью vector-role и создайте сценарий тестирования по умолчанию при помощи `molecule init scenario --driver-name docker`.
-3. Добавьте несколько разных дистрибутивов (oraclelinux:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.
+2. Перейдите в каталог с ролью vector-role и создайте сценарий тестирования по умолчанию при помощи `molecule init scenario --driver-name docker`. 
+3. Добавьте несколько разных дистрибутивов (oraclelinux:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.  
 4. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.). 
 5. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
-5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
-
+![1](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-05-testing/img/molec.png)
+![1](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-05-testing/img/valid.png)
+5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.  
+#### [Vector-role tag.v1.0.2](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/v1.0.2)
 ### Tox
 
 1. Добавьте в директорию с vector-role файлы из [директории](./example).
 2. Запустите `docker run --privileged=True -v <path_to_repo>:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash`, где path_to_repo — путь до корня репозитория с vector-role на вашей файловой системе.
-3. Внутри контейнера выполните команду `tox`, посмотрите на вывод.
-5. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.
-6. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.
-8. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
-9. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
+3. Внутри контейнера выполните команду `tox`, посмотрите на вывод.  
+![tox](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-05-testing/img/tox.png)  
+5. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.  
+![podman](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-05-testing/img/mol.png)  
+6. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.  
+```bash
+commands =
+    {posargs:molecule test -s centos7t --destroy always}
+```  
+8. Запустите команду `tox`. Убедитесь, что всё отработало успешно.  
+![done_tox](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-05-testing/img/donetox.png)  
+9. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.  
+#### [Vector-role tag.v1.0.3](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/v1.0.3)
 
 После выполнения у вас должно получится два сценария molecule и один tox.ini файл в репозитории. Не забудьте указать в ответе теги решений Tox и Molecule заданий. В качестве решения пришлите ссылку на  ваш репозиторий и скриншоты этапов выполнения задания. 
 

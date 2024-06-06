@@ -24,6 +24,22 @@
        scm: git
        version: "1.13"
        name: clickhouse 
+   ```  
+
+   ```yaml
+   ---
+    - name: clickhouse
+       src: git@github.com:plusvaldis/mnt-homeworks-ansible.git
+       scm: git
+       version: master
+    - name: vector
+      src: git@github.com:plusvaldis/mnt-homeworks-ansible.git
+      scm: git
+      version: vector
+    - name: Lighthouse
+      src: git@github.com:plusvaldis/mnt-homeworks-ansible.git
+      scm: git
+      version: lighthouse
    ```
 
 2. При помощи `ansible-galaxy` скачайте себе эту роль.
@@ -36,8 +52,15 @@
 9. Переработайте playbook на использование roles. Не забудьте про зависимости LightHouse и возможности совмещения `roles` с `tasks`.
 10. Выложите playbook в репозиторий.
 11. В ответе дайте ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-04-role/img/roles.png)
+![install](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/08-ansible-04-role/img/install.png)
 
----
+---  
+
+* [Clickhouse](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/master)
+* [Vector](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/vector)
+* [Lighthouse](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/lighthouse)
+* [Playbook](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/MNT-video/08-ansible-04-role/playbook)
 
 ### Как оформить решение задания
 
