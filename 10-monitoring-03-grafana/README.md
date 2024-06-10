@@ -23,11 +23,11 @@
 
 1. Используя директорию [help](./help) внутри этого домашнего задания, запустите связку prometheus-grafana.
 1. Зайдите в веб-интерфейс grafana, используя авторизационные данные, указанные в манифесте docker-compose.  
-1
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-03-grafana/img/1.png)  
 1. Подключите поднятый вами prometheus, как источник данных.  
-2
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-03-grafana/img/2.png)  
 1. Решение домашнего задания — скриншот веб-интерфейса grafana со списком подключенных Datasource.  
-3
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-03-grafana/img/3.png)
 
 ## Задание 2
 
@@ -42,36 +42,41 @@
 - утилизация CPU для nodeexporter (в процентах, 100-idle);  
 ```bash
 100 - (avg by (instance) (irate(node_cpu_seconds_total{job="nodeexporter",mode="idle"}[5s])) * 100)
-```
+```  
 - CPULA 1/5/15;  
 ```bash
 avg(node_load1) / count(count(node_cpu_seconds_total) by (cpu)) * 100
 avg(node_load5) / count(count(node_cpu_seconds_total) by (cpu)) * 100
 avg(node_load15) / count(count(node_cpu_seconds_total) by (cpu)) * 100
-```
+```  
 - количество свободной оперативной памяти;  
 ```bash
 (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / 1073741824
 node_memory_MemTotal_bytes / 1073741824
 node_memory_MemAvailable_bytes / 1073741824
-```
+```  
 - количество места на файловой системе.  
 ```bash
 100 - ((node_filesystem_avail_bytes{device="/dev/mapper/ubuntu--vg-ubuntu--lv",fstype="ext4"} * 100) / node_filesystem_size_bytes{device="/dev/mapper/ubuntu--vg-ubuntu--lv",fstype="ext4"})
-```
+```  
 
 Для решения этого задания приведите promql-запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.  
-4
-asd
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-03-grafana/img/4.png)  
+
 ## Задание 3
 
 1. Создайте для каждой Dashboard подходящее правило alert — можно обратиться к первой лекции в блоке «Мониторинг».
-1. В качестве решения задания приведите скриншот вашей итоговой Dashboard.
+1. В качестве решения задания приведите скриншот вашей итоговой Dashboard.  
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-03-grafana/img/5.png)  
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-03-grafana/img/6.png)  
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-03-grafana/img/7.png)  
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-03-grafana/img/8.png)  
 
 ## Задание 4
 
 1. Сохраните ваш Dashboard.Для этого перейдите в настройки Dashboard, выберите в боковом меню «JSON MODEL». Далее скопируйте отображаемое json-содержимое в отдельный файл и сохраните его.
-1. В качестве решения задания приведите листинг этого файла.
+1. В качестве решения задания приведите листинг этого файла.  
+[dash.json](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-03-grafana/dashboard/dash.json)  
 
 ---
 
