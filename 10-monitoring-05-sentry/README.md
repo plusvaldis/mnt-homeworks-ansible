@@ -19,7 +19,7 @@ Free Cloud account имеет ограничения:
 
 В качестве решения задания пришлите скриншот меню Projects.  
 
-![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/MNT-video/10-monitoring-05-sentry/img/1.png)  
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-05-sentry/img/1.png)  
 
 ## Задание 2
 
@@ -27,8 +27,8 @@ Free Cloud account имеет ограничения:
 1. Изучите информацию, представленную в событии.
 1. Перейдите в список событий проекта, выберите созданное вами и нажмите `Resolved`.
 1. В качестве решения задание предоставьте скриншот `Stack trace` из этого события и список событий проекта после нажатия `Resolved`.  
-![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/MNT-video/10-monitoring-05-sentry/img/2.png)  
-![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/MNT-video/10-monitoring-05-sentry/img/3.png)    
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-05-sentry/img/2.png)  
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-05-sentry/img/3.png)    
 
 ## Задание 3
 
@@ -40,7 +40,7 @@ Free Cloud account имеет ограничения:
 `sample issue` до того, как вы его сгенерировали, и то, что правило алёртинга выставлено по дефолту (во всех полях all).
 Также проверьте проект, в котором вы создаёте событие — возможно алёрт привязан к другому.
 5. В качестве решения задания пришлите скриншот тела сообщения из оповещения на почте.  
-![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/MNT-video/10-monitoring-05-sentry/img/4.png)
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-05-sentry/img/4.png)
 6. Дополнительно поэкспериментируйте с правилами алёртинга. Выбирайте разные условия отправки и создавайте sample events. 
 
 ## Задание повышенной сложности
