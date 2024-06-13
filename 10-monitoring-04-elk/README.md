@@ -40,9 +40,9 @@ Filebeat следует сконфигурировать для отправки
 Результатом выполнения задания должны быть:
 
 - скриншот `docker ps` через 5 минут после старта всех контейнеров (их должно быть 5);  
-![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/MNT-video/10-monitoring-04-elk/img/1.png)
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-04-elk/img/1.png)  
 - скриншот интерфейса kibana;  
-![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/MNT-video/10-monitoring-04-elk/img/2.png)
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-04-elk/img/2.png)  
 - docker-compose манифест (если вы не использовали директорию help);
 - ваши yml-конфигурации для стека (если вы не использовали директорию help).
 
@@ -50,16 +50,16 @@ Filebeat следует сконфигурировать для отправки
 
 Перейдите в меню [создания index-patterns  в kibana](http://localhost:5601/app/management/kibana/indexPatterns/create) и создайте несколько index-patterns из имеющихся.  
 
-![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/MNT-video/10-monitoring-04-elk/img/3.png)
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-04-elk/img/3.png)  
 
 Перейдите в меню просмотра логов в kibana (Discover) и самостоятельно изучите, как отображаются логи и как производить поиск по логам.  
 
-![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/MNT-video/10-monitoring-04-elk/img/4.png)
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-04-elk/img/4.png)  
 
 В манифесте директории help также приведенно dummy-приложение, которое генерирует рандомные события в stdout-контейнера.
 Эти логи должны порождать индекс logstash-* в elasticsearch. Если этого индекса нет — воспользуйтесь советами и источниками из раздела «Дополнительные ссылки» этого задания.  
 
-![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/tree/MNT-video/10-monitoring-04-elk/img/5.png)
+![roles](https://github.com/plusvaldis/mnt-homeworks-ansible/blob/MNT-video/10-monitoring-04-elk/img/5.png)  
  
 ---
 
